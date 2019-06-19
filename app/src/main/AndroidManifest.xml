@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools" package="id.aasumitro.made_app">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="id.aasumitro.made">
 
     <application
             android:allowBackup="true"
@@ -10,10 +11,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-
         <activity
-                android:screenOrientation="reversePortrait"
-                android:name=".MainActivity">
+                android:name="id.aasumitro.made.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -21,16 +20,14 @@
             </intent-filter>
         </activity>
         <activity
-                android:screenOrientation="reversePortrait"
-                android:name=".DetailActivity">
+                android:name="id.aasumitro.made.DetailActivity">
             <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="id.aasumitro.made.MainActivity"/>
 
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
-
         </activity>
     </application>
 

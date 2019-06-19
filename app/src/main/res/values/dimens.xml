@@ -17,4 +17,14 @@
     <dimen name="image_poster_detail_width">100dp</dimen>
     <dimen name="head_padding">8dp</dimen>
     <dimen name="head_margin_top">6dp</dimen>
+    <dimen name="setting_container_padding">20dp</dimen>
+    <dimen name="text_language_title_size">28sp</dimen>
+    <dimen name="card_item_margin">5dp</dimen>
+    <dimen name="card_item_corner_radius">2dp</dimen>
+    <dimen name="card_item_title_bar_padding">10dp</dimen>
+    <dimen name="card_item_image_height">250dp</dimen>
+    <dimen name="item_card_ratting_size">18sp</dimen>
+    <dimen name="setting_radio_margin_start">25dp</dimen>
+    <dimen name="setting_radio_margin_top">25dp</dimen>
+
 </resources>

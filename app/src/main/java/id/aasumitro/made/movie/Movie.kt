@@ -1,4 +1,4 @@
-package id.aasumitro.made_app
+package id.aasumitro.made.movie
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

@@ -1,4 +1,4 @@
-package id.aasumitro.made_app
+package id.aasumitro.made
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package id.aasumitro.made_app
+package id.aasumitro.made.movie
 
 /**
  * Created by A. A. Sumitro on 18/06/19.

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="data_movie_title">
+        <item>A Star Is Born</item>
+        <item>Aquaman</item>
+        <item>Avengers: Infinity War</item>
+        <item>Bird Box</item>
+        <item>Bumblebee</item>
+        <item>Once Upon a Deadpool</item>
+        <item>How to Train Your Dragon: The Hidden World</item>
+        <item>Dragon Ball Super: Broly</item>
+    </string-array>
+
+    <string-array name="data_movie_overview">
+        <item>Seasoned musician Jackson Maine discovers — and falls in love with — struggling artist Ally. She has just
+            about given up on her dream to make it big as a singer — until Jack coaxes her into the spotlight. But even
+            as Ally\'s career takes off, the personal side of their relationship is breaking down, as Jack fights an
+            ongoing battle with his own internal demons.
+        </item>
+        <item>Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the
+            power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people
+            and then the surface world. Standing in his way is Arthur Curry, Orm\'s half-human, half-Atlantean brother
+            and true heir to the throne.
+        </item>
+        <item>As the Avengers and their allies have continued to protect the world from threats too large for any one
+            hero to handle, a new danger has emerged from the cosmic shadows: Thanos. A despot of intergalactic infamy,
+            his goal is to collect all six Infinity Stones, artifacts of unimaginable power, and use them to inflict his
+            twisted will on all of reality. Everything the Avengers have fought for has led up to this moment - the fate
+            of Earth and existence itself has never been more uncertain.
+        </item>
+        <item>Five years after an ominous unseen presence drives most of society to suicide, a survivor and her two
+            children make a desperate bid to reach safety.
+        </item>
+        <item>On the run in the year 1987, Bumblebee finds refuge in a junkyard in a small Californian beach town.
+            Charlie, on the cusp of turning 18 and trying to find her place in the world, discovers Bumblebee,
+            battle-scarred and broken. When Charlie revives him, she quickly learns this is no ordinary yellow VW bug.
+        </item>
+        <item>A kidnapped Fred Savage is forced to endure Deadpool\'s PG-13 rendition of Deadpool 2 as a Princess
+            Bride-esque story that\'s full of magic, wonder &amp; zero F\'s.
+        </item>
+        <item>As Hiccup fulfills his dream of creating a peaceful dragon utopia, Toothless\’ discovery of an untamed,
+            elusive mate draws the Night Fury away. When danger mounts at home and Hiccup\’s reign as village chief is
+            tested, both dragon and rider must make impossible decisions to save their kind.
+        </item>
+        <item>Earth is peaceful following the Tournament of Power. Realizing that the universes still hold many more
+            strong people yet to see, Goku spends all his days training to reach even greater heights. Then one day,
+            Goku and Vegeta are faced by a Saiyan called \'Broly\' who they\'ve never seen before. The Saiyans were
+            supposed to have been almost completely wiped out in the destruction of Planet Vegeta, so what\'s this one
+            doing on Earth? This encounter between the three Saiyans who have followed completely different destinies
+            turns into a stupendous battle, with even Frieza (back from Hell) getting caught up in the mix.
+        </item>
+    </string-array>
+
+    <array name="data_movie_poster">
+        <item>@drawable/poster_a_star</item>
+        <item>@drawable/poster_aquaman</item>
+        <item>@drawable/poster_avengerinfinity</item>
+        <item>@drawable/poster_birdbox</item>
+        <item>@drawable/poster_bumblebee</item>
+        <item>@drawable/poster_deadpool</item>
+        <item>@drawable/poster_dragon</item>
+        <item>@drawable/poster_dragonball</item>
+    </array>
+
+    <array name="data_movie_rating">
+        <item>8.1/10</item>
+        <item>8.3/10</item>
+        <item>8.5/10</item>
+        <item>8.0/10</item>
+        <item>8.1/10</item>
+        <item>8.8/10</item>
+        <item>8.0/10</item>
+        <item>7.1/10</item>
+    </array>
+
+
+    <string-array name="data_show_title">
+        <item>Strange Angel</item>
+        <item>Lost in Space</item>
+        <item>Titans</item>
+        <item>Krypton</item>
+        <item>Sword Art Online Alternative: Gun Gale Online</item>
+        <item>Captain Tsubasa</item>
+    </string-array>
+
+    <string-array name="data_show_overview">
+        <item>
+            The story of the mysterious and brilliant Jack Parsons in 1940s Los Angeles as by day he helps birth the discipline of American rocketry and by night is a performer of sex magick rituals and a disciple to occultist Aleister Crowley.
+        </item>
+        <item>
+            After crash-landing on an alien planet, the Robinson family fights against all odds to survive and escape. But they\'re surrounded by hidden dangers.
+        </item>
+        <item>
+            A team of young superheroes led by Nightwing (formerly Batman\'s first Robin) form to combat evil and other perils.
+        </item>
+        <item>
+            Set two generations before the destruction of the legendary Man of Steel\’s home planet, Krypton follows Superman\’s grandfather — whose House of El was ostracized and shamed — as he fights to redeem his family\’s honor and save his beloved world from chaos.
+        </item>
+        <item>
+            Karen Kohiruimaki always felt out of place in the real world. Due to her extreme height, she found it hard to make friends with other girls her age. Everything changes when she\'s introduced to VR and Gun Gale Online. In GGO, Karen is free to play the cute, chibi avatar of her dreams! Can Karen find friendship in this bullet-ridden MMO?
+        </item>
+        <item>
+            The passionate story of an elementary school student whose thoughts and dreams revolve almost entirely around the love of soccer. 11-year-old Tsubasa Oozora started playing football at a very young age, and while it was mostly just a recreational sport for his friends, for him, it developed into something of an obsession. In order to pursue his dream to the best of his elementary school abilities, Tsubasa moves with his mother to Nankatsu city, which is well-known for its excellent elementary school soccer teams. But although he was easily the best in his old town, Nankatsu has a lot more competition, and he will need all of his skill and talent in order to stand out from this new crowd.
+            He encounters not only rivals, but also new friends like the pretty girl Sanae Nakazawa and the talented goalkeeper, Genzo Wakabayashi, who shares the same passion as Tsubasa, and will prove to be a treasured friend in helping him push towards his dreams. Representing Japan in the FIFA World Cup is Tsubasa\’s ultimate dream, but it will take a lot more than talent to reach it.
+        </item>
+    </string-array>
+
+    <array name="data_show_poster">
+        <item>@drawable/poster_strange_angel</item>
+        <item>@drawable/poster_lis</item>
+        <item>@drawable/poster_titan</item>
+        <item>@drawable/poster_krypton</item>
+        <item>@drawable/poster_sao</item>
+        <item>@drawable/poster_tsubasa</item>
+    </array>
+
+    <array name="data_show_rating">
+        <item>7.0/10 IMDb</item>
+        <item>7.2/10 IMDb</item>
+        <item>8.0/10 IMDb</item>
+        <item>7.1/10 IMDb</item>
+        <item>6.8/10 IMDb</item>
+        <item>8.6/10 IMDb</item>
+    </array>
+</resources>
