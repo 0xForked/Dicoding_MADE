@@ -2,7 +2,6 @@ package id.aasumitro.made_app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
@@ -25,4 +24,5 @@ class DetailActivity : AppCompatActivity() {
         movie_rating_detail.text = rating
         movie_overview_detail.text = movie.overview
     }
+
 }

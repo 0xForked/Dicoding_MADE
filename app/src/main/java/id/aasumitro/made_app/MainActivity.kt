@@ -3,12 +3,8 @@ package id.aasumitro.made_app
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import android.content.res.TypedArray
-import android.util.Log
-import android.widget.Toast
-import androidx.core.content.res.TypedArrayUtils.getResourceId
 import id.aasumitro.made_app.DetailActivity.Companion.EXTRA_DATA
 
 class MainActivity : AppCompatActivity(), MovieListener {
