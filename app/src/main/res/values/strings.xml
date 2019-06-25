@@ -1,14 +1,13 @@
 <resources>
     <string name="app_name" translatable="false">MADE_APP Submission</string>
 
-    <string name="item_movie_overview_placeholder" translatable="false">Lorem ipsum do lorem do ipsum</string>
     <string name="title_movie">MOVIE</string>
     <string name="title_show">TV SHOW</string>
-    <string name="text_english" translatable="false">English</string>
-    <string name="text_bahasa_indonesia" translatable="false">Bahasa (Indonesia)</string>
 
-    <string name="overview">Overview</string>
     <string name="change_language_settings">Change language</string>
-    <string name="text_select_language">Select language:</string>
-    <string name="item_movie_title_placeholder">TITLE</string>
+    <string name="app_title" translatable="false">DA\'MOVIE</string>
+    <string name="text_description">Description</string>
+    <string name="text_first_air">First air</string>
+    <string name="text_popularity">Popularity</string>
+    <string name="text_overview">Overview</string>
 </resources>

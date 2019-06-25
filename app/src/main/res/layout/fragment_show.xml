@@ -12,7 +12,7 @@
             android:scrollbars="vertical"
             android:nestedScrollingEnabled="false"
             app:stackFromEnd="true"
-            tools:listitem="@layout/item_show"
+            tools:listitem="@layout/item_list_placeholder"
             app:reverseLayout="true"/>
 
 </LinearLayout>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="change_language_settings">Rubah bahasa</string>
-    <string name="item_movie_title_placeholder">JUDUL</string>
-    <string name="overview">Kilasan Singkat</string>
-    <string name="text_select_language">Pilih bahasa:</string>
     <string name="title_movie">FILM</string>
     <string name="title_show">ACARA TV</string>
+    <string name="text_description">Deskripsi</string>
+    <string name="text_overview">Ikhtisar</string>
+    <string name="text_first_air">Tayang</string>
+    <string name="text_popularity">Popularitas</string>
 </resources>
