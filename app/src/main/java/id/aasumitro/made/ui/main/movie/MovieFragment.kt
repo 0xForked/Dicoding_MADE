@@ -16,6 +16,8 @@ import id.aasumitro.made.ui.detail.DetailActivity.Companion.EXTRA_DATA
 import id.aasumitro.made.ui.detail.DetailActivity.Companion.MOVIE
 import kotlinx.android.synthetic.main.fragment_movie.*
 import id.aasumitro.made.ui.detail.DetailActivity
+import id.aasumitro.made.ui.main.rv.listener.MovieListener
+import id.aasumitro.made.ui.main.rv.adapter.MovieAdapter
 
 /**
  * Created by A. A. Sumitro on 19/06/19.

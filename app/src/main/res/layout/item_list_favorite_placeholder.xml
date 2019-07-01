@@ -3,9 +3,9 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/item_list_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/item_favorite_container"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:layout_margin="@dimen/card_item_margin"
@@ -19,7 +19,7 @@
         <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/card_item_image_height"
-                android:id="@+id/item_list_poster"
+                android:id="@+id/item_favorite_poster"
                 android:scaleType="fitXY"
                 tools:src="@mipmap/ic_launcher"
                 android:contentDescription="@null"/>
@@ -34,7 +34,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
             <TextView
-                    android:id="@+id/item_list_title"
+                    android:id="@+id/item_favorite_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/item_card_ratting_size"

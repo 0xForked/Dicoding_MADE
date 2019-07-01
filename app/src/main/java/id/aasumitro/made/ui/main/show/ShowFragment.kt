@@ -16,6 +16,8 @@ import id.aasumitro.made.ui.detail.DetailActivity
 import id.aasumitro.made.ui.detail.DetailActivity.Companion.DATA_ENTITY
 import id.aasumitro.made.ui.detail.DetailActivity.Companion.EXTRA_DATA
 import id.aasumitro.made.ui.detail.DetailActivity.Companion.SHOW
+import id.aasumitro.made.ui.main.rv.listener.ShowListener
+import id.aasumitro.made.ui.main.rv.adapter.ShowAdapter
 
 /**
  * Created by A. A. Sumitro on 19/06/19.

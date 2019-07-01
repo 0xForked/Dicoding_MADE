@@ -7,6 +7,8 @@ import android.view.MenuItem
 import android.provider.Settings.ACTION_LOCALE_SETTINGS
 import id.aasumitro.made.R
 import id.aasumitro.made.base.BaseActivity
+import id.aasumitro.made.ui.main.favorite.FavoriteFragment
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : BaseActivity(R.layout.activity_main)  {
 
@@ -16,6 +18,15 @@ class MainActivity : BaseActivity(R.layout.activity_main)  {
             MainViewPagerAdapter(supportFragmentManager, this)
         main_view_pager.adapter = mViewPagerAdapter
         main_tab_layout.setupWithViewPager(main_view_pager)
+    }
+
+    override fun initListener() {
+        super.initListener()
+        fab.setOnClickListener {
+            val mFavorite =
+                FavoriteFragment.newInstance()
+            mFavorite.show(supportFragmentManager, FavoriteFragment.TAG)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

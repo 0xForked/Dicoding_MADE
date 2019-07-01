@@ -7,4 +7,9 @@
     <string name="text_overview">Ikhtisar</string>
     <string name="text_first_air">Tayang</string>
     <string name="text_popularity">Popularitas</string>
+    <string name="title_favorite">Jadikan favorit</string>
+    <string name="data_is_empty">Data tidak Tersedia</string>
+    <string name="favorite_movie">Film Favorit</string>
+    <string name="favorite_show">Acara Favorit</string>
+    <string name="my_favorite">Daftar Favorit</string>
 </resources>

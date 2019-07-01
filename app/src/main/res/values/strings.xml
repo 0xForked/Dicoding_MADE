@@ -5,9 +5,14 @@
     <string name="title_show">TV SHOW</string>
 
     <string name="change_language_settings">Change language</string>
-    <string name="app_title" translatable="false">DA\'MOVIE</string>
+    <string name="app_title" translatable="false">DA\'MOVIE XXI</string>
     <string name="text_description">Description</string>
     <string name="text_first_air">First air</string>
     <string name="text_popularity">Popularity</string>
     <string name="text_overview">Overview</string>
+    <string name="title_favorite">add to favorite</string>
+    <string name="data_is_empty">Data is Empty</string>
+    <string name="my_favorite">My Favorite</string>
+    <string name="favorite_movie">Favorite Movie</string>
+    <string name="favorite_show">Favorite Show</string>
 </resources>

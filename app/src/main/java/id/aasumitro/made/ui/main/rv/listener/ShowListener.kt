@@ -1,4 +1,4 @@
-package id.aasumitro.made.ui.main.show
+package id.aasumitro.made.ui.main.rv.listener
 
 import id.aasumitro.made.data.entity.Show
 

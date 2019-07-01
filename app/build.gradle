@@ -40,6 +40,9 @@ dependencies {
 
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0-alpha01"
     kapt "androidx.lifecycle:lifecycle-compiler:2.2.0-alpha01"
+    implementation "android.arch.persistence.room:runtime:2.2.0-alpha01"
+    kapt "android.arch.persistence.room:compiler:2.2.0-alpha01"
+    implementation "android.arch.persistence.room:rxjava2:2.2.0-alpha01"
 
     implementation 'com.squareup.okhttp3:logging-interceptor:3.14.2'
     implementation 'com.squareup.retrofit2:retrofit:2.6.0'
