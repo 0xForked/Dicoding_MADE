@@ -16,13 +16,30 @@
             android:background="@color/colorBackgroundSecondary"
             app:popupTheme="@style/AppTheme">
 
-        <TextView
+        <id.aasumitro.made.utils.components.CustomTextView
                 android:id="@+id/toolbar_title"
                 android:textSize="@dimen/text_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorTextAccent"
-                android:layout_gravity="start" />
+                android:layout_gravity="start"/>
+
+        <id.aasumitro.made.utils.components.CustomEditText
+                android:visibility="gone"
+                android:id="@+id/toolbar_search"
+                android:drawableStart="@drawable/ic_search_white_24dp"
+                android:drawablePadding="@dimen/component_medium"
+                android:textSize="@dimen/text_small"
+                android:focusable="true"
+                android:layout_marginStart="@dimen/activity_horizontal_margin_big"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:inputType="text"
+                style="@style/AppTheme.EditText.Accent"
+                android:hint="@string/text_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
     </androidx.appcompat.widget.Toolbar>
 

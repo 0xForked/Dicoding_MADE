@@ -1,11 +1,13 @@
 package id.aasumitro.made.ui.detail
 
+import android.appwidget.AppWidgetManager
+import android.content.ComponentName
+import android.content.Intent
 import android.view.Menu
 import android.view.MenuItem
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProviders
-import com.squareup.picasso.MemoryPolicy
-import com.squareup.picasso.Picasso
+import com.bumptech.glide.request.RequestOptions
 import id.aasumitro.made.R
 import id.aasumitro.made.base.BaseActivity
 import id.aasumitro.made.data.entity.Movie
@@ -13,8 +15,12 @@ import id.aasumitro.made.data.entity.Show
 import id.aasumitro.made.data.source.remote.ApiConst.BACK_DROP_SiZE
 import id.aasumitro.made.data.source.remote.ApiConst.IMAGE_URL
 import id.aasumitro.made.data.source.remote.ApiConst.POSTER_SIZE
+import id.aasumitro.made.ui.widget.FavoriteWidget
+import id.aasumitro.made.utils.GlideApp
 import kotlinx.android.synthetic.main.activity_detail.*
-import kotlinx.android.synthetic.main.component_detail.*
+import kotlinx.android.synthetic.main.content_detail.*
+
+
 
 class DetailActivity : BaseActivity(R.layout.activity_detail) {
 
@@ -23,15 +29,16 @@ class DetailActivity : BaseActivity(R.layout.activity_detail) {
         const val EXTRA_DATA = "EXTRA_DATA"
         const val MOVIE = "MOVIE"
         const val SHOW = "SHOW"
+        const val ALL = "ALL"
     }
 
     private var mMenuItem: Menu? = null
 
     private var isFavorite: Boolean = false
 
-    lateinit var mDetailType: String
-    lateinit var mMovie: Movie
-    lateinit var mShow: Show
+    private lateinit var mDetailType: String
+    private lateinit var mMovie: Movie
+    private lateinit var mShow: Show
 
     private val mViewModel: DetailViewModel by lazy {
         ViewModelProviders
@@ -83,18 +90,21 @@ class DetailActivity : BaseActivity(R.layout.activity_detail) {
     private fun setData(
         mapData: Map<String, String?>
     ) {
-        Picasso.get()
+        val requestOptions = RequestOptions()
+        requestOptions.apply {
+            placeholder(R.drawable.ic_cloud_download_gray_24dp)
+            error(R.drawable.ic_broken_image_gray_24dp)
+            centerCrop()
+        }
+
+        GlideApp.with(this)
+            .setDefaultRequestOptions(requestOptions)
             .load(IMAGE_URL + BACK_DROP_SiZE + mapData["backdropPath"])
-            .placeholder(R.drawable.ic_cloud_download_gray_24dp)
-            .error(R.drawable.ic_broken_image_gray_24dp)
-            .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
             .into(poster_backdrop_detail)
 
-        Picasso.get()
+        GlideApp.with(this)
+            .setDefaultRequestOptions(requestOptions)
             .load(IMAGE_URL + POSTER_SIZE + mapData["posterPath"])
-            .placeholder(R.drawable.ic_cloud_download_gray_24dp)
-            .error(R.drawable.ic_broken_image_gray_24dp)
-            .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
             .into(poster_detail)
 
         title_detail.text = mapData["title"]
@@ -119,18 +129,32 @@ class DetailActivity : BaseActivity(R.layout.activity_detail) {
             }
             R.id.menu_favorite -> {
                 if (isFavorite) {
-                    when(mDetailType) {
+                    when (mDetailType) {
                         MOVIE -> mViewModel.removeFromFavorite(MOVIE, mMovie.id?.toInt())
                         SHOW -> mViewModel.removeFromFavorite(SHOW, mShow.id?.toInt())
                     }
                 } else {
-                    when(mDetailType) {
+                    when (mDetailType) {
                         MOVIE -> mViewModel.markAsFavorite(MOVIE, mMovie, null)
                         SHOW -> mViewModel.markAsFavorite(SHOW, null, mShow)
                     }
                 }
                 isFavorite = !isFavorite
                 favoriteStatus()
+
+                // force refresh the widget service
+                val mIntent = Intent(this, FavoriteWidget::class.java)
+                mIntent.action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
+                val ids = AppWidgetManager
+                    .getInstance(this)
+                    .getAppWidgetIds(
+                        ComponentName(
+                            this,
+                            FavoriteWidget::class.java
+                        ))
+                mIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+                sendBroadcast(mIntent)
+
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -138,7 +162,7 @@ class DetailActivity : BaseActivity(R.layout.activity_detail) {
     }
 
     private fun favoriteState() {
-        when(mDetailType) {
+        when (mDetailType) {
             MOVIE -> mViewModel.favoriteState(MOVIE, mMovie.id?.toInt())
             SHOW -> mViewModel.favoriteState(SHOW, mShow.id?.toInt())
         }

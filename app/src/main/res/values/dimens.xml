@@ -32,5 +32,19 @@
     <dimen name="text_overview_display_margin_end">16dp</dimen>
     <dimen name="text_overview_display_margin_start">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="divider">0.8dp</dimen>
+    <dimen name="radius_input">10dp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="activity_horizontal_margin">18dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="component_medium">8dp</dimen>
+    <dimen name="component_big">12dp</dimen>
+    <dimen name="component_extra">16dp</dimen>
+
+    <!--
+Refer to App Widget Documentation for margin information
+http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
+    -->
 
 </resources>

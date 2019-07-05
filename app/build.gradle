@@ -4,14 +4,21 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion SDK.compile_version
     defaultConfig {
-        applicationId "id.aasumitro.made_app"
-        minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        applicationId ApplicationId.id
+        minSdkVersion SDK.minimum_version
+        targetSdkVersion SDK.target_version
+        versionCode Releases.version_code
+        versionName Releases.version_name
+
+        multiDexEnabled true
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "API_URL", "\"${URLDep.origin}\"")
+        buildConfigField("String", "API_KEY", "\"${KEYDep.api_key}\"")
+        buildConfigField("String", "THUMBNAIL_URL", "\"${URLDep.thumbnail}\"")
     }
     buildTypes {
         release {
@@ -30,32 +37,39 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'com.google.android.material:material:1.1.0-alpha07'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.core:core-ktx:1.0.2'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 
-    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0-alpha01"
-    kapt "androidx.lifecycle:lifecycle-compiler:2.2.0-alpha01"
-    implementation "android.arch.persistence.room:runtime:2.2.0-alpha01"
-    kapt "android.arch.persistence.room:compiler:2.2.0-alpha01"
-    implementation "android.arch.persistence.room:rxjava2:2.2.0-alpha01"
+    implementation KotlinDeps.kotlin_std_lib
 
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.14.2'
-    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
-    implementation "com.squareup.retrofit2:adapter-rxjava2:2.6.0"
-    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
-    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation AndroidXDeps.appcompat
+    implementation AndroidXDeps.card_view
+    implementation AndroidXDeps.recycler_view
+    implementation AndroidXDeps.ktx
+    implementation AndroidXDeps.constraint_layout
 
-    implementation "io.reactivex.rxjava2:rxjava:2.2.10"
-    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+    implementation GoogleDeps.material
 
-    implementation "com.kaopiz:kprogresshud:1.2.0"
+    implementation ArchCompDeps.lifecycle_extension
+    kapt ArchCompDeps.lifecycle_compiler
+    implementation ArchCompDeps.room_runtime
+    kapt ArchCompDeps.room_compiler
+    implementation ArchCompDeps.room_rxjava
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation NetworkDeps.okhttp_logging
+    implementation NetworkDeps.retrofit
+    implementation NetworkDeps.retrofit_rxjava_adapter
+    implementation NetworkDeps.retrofit_gson_converter
+
+    implementation NetworkDeps.glide
+    kapt NetworkDeps.glide_compiler
+
+    implementation RxDeps.main
+    implementation RxDeps.android
+
+    implementation OtherDeps.progress_hud
+
+    implementation 'com.github.ibrahimsn98:live-preferences:1.1'
+
+    testImplementation TestDeps.junit
+    androidTestImplementation AndroidXDeps.test_runner
+    androidTestImplementation AndroidXDeps.espresso_core
 }

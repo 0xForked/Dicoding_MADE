@@ -23,18 +23,17 @@ class FavoriteViewModel : ViewModel() {
     private var mListMovies: MutableLiveData<ArrayList<Movie>>? = null
     private var mListShows: MutableLiveData<ArrayList<Show>>? = null
 
-    fun movies() : LiveData<ArrayList<Movie>> {
+    fun movies(): LiveData<ArrayList<Movie>> {
         mListMovies = MutableLiveData()
         getMovies()
         return mListMovies as MutableLiveData
     }
 
-    fun shows() : LiveData<ArrayList<Show>> {
+    fun shows(): LiveData<ArrayList<Show>> {
         mListShows = MutableLiveData()
         getShows()
         return mListShows as MutableLiveData
     }
-
 
     @SuppressLint("CheckResult")
     private fun getMovies() {

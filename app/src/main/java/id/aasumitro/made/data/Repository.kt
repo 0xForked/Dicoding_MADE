@@ -17,18 +17,29 @@ import io.reactivex.schedulers.Schedulers
  * https://aasumitro.id
  */
 
-
 class Repository(
     private val apiClient: ApiClient = ApiClient()
 ) {
 
     fun getMovies():
             Observable<DataResult.MovieResult>? =
-                apiClient.apiServices()?.getMovies()
+        apiClient.apiServices()?.getMovies()
 
     fun getShows():
             Observable<DataResult.ShowResult>? =
-                apiClient.apiServices()?.getShow()
+        apiClient.apiServices()?.getShow()
+
+    fun getMoviesByName(query: String, year: Int?):
+            Observable<DataResult.MovieResult>? =
+        apiClient.apiServices()?.getMoviesByName(query = query, year = year)
+
+    fun getShowsByName(query: String, year: Int?):
+            Observable<DataResult.ShowResult>? =
+        apiClient.apiServices()?.getShowsByName(query = query, year = year)
+
+    fun getUpcomingMovie():
+            Observable<DataResult.MovieResult>? =
+        apiClient.apiServices()?.getUpcomingMovie()
 
     @SuppressLint("CheckResult")
     fun storeFavoriteMovie(movie: Movie?) {
@@ -42,9 +53,11 @@ class Repository(
             .subscribeOn(Schedulers.io())
             .observeOn(Schedulers.io())
             .subscribe {
-                Log.d("insertFavoriteMovie",
+                Log.d(
+                    "insertFavoriteMovie",
                     "Mark event ${movie?.id} " +
-                            "as favorite...")
+                            "as favorite..."
+                )
             }
     }
 
@@ -70,9 +83,11 @@ class Repository(
             .damovieDao()
             .readFavoriteMovie()
             .doOnSuccess {
-                Log.d("getFavoriteMovie",
+                Log.d(
+                    "getFavoriteMovie",
                     "get ${it.size} " +
-                            "favorite data...")
+                            "favorite data..."
+                )
             }
 
     fun getMovieFavoriteState(movieId: Int?) =
@@ -93,9 +108,11 @@ class Repository(
             .subscribeOn(Schedulers.io())
             .observeOn(Schedulers.io())
             .subscribe {
-                Log.d("insertFavoriteShow",
+                Log.d(
+                    "insertFavoriteShow",
                     "Mark event ${show?.id} " +
-                            "as favorite...")
+                            "as favorite..."
+                )
             }
     }
 
@@ -121,9 +138,11 @@ class Repository(
             .damovieDao()
             .readFavoriteShow()
             .doOnSuccess {
-                Log.d("getFavoriteShow",
+                Log.d(
+                    "getFavoriteShow",
                     "get ${it.size} " +
-                            "favorite data...")
+                            "favorite data..."
+                )
             }
 
     fun getShowFavoriteState(showId: Int?) =

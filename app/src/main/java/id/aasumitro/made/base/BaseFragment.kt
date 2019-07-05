@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
-import id.aasumitro.made.utils.extensions.showSnackBar
 import id.aasumitro.made.utils.NetworkInterface
+import id.aasumitro.made.utils.extensions.showSnackBar
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -33,7 +33,7 @@ abstract class BaseFragment(
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-        if(activity is BaseActivity) {
+        if (activity is BaseActivity) {
             mBaseActivity = activity as BaseActivity
         }
 

@@ -6,6 +6,7 @@ import android.graphics.PorterDuffColorFilter
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -13,10 +14,10 @@ import com.google.android.material.snackbar.Snackbar
 import com.kaopiz.kprogresshud.KProgressHUD
 import id.aasumitro.made.R
 import id.aasumitro.made.services.ConnectionReceiver
-import id.aasumitro.made.utils.extensions.initProgressDialog
-import id.aasumitro.made.utils.extensions.showSnackBar
 import id.aasumitro.made.utils.ConnectionInterface
 import id.aasumitro.made.utils.NetworkInterface
+import id.aasumitro.made.utils.extensions.initProgressDialog
+import id.aasumitro.made.utils.extensions.showSnackBar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.component_toolbar.*
 
@@ -60,17 +61,21 @@ abstract class BaseActivity(
                 this,
                 R.drawable.ic_chevron_left_blue_24dp
             )
-            backIcon?.setColorFilter(ContextCompat.getColor(
-                this,
-                R.color.colorTextAccent
-            ), PorterDuff.Mode.SRC_ATOP)
-            val iconColor = PorterDuffColorFilter(ContextCompat.getColor(
-                this,
-                if(primary)
+            backIcon?.setColorFilter(
+                ContextCompat.getColor(
+                    this,
                     R.color.colorTextAccent
-                else
-                    R.color.colorTextPrimary
-            ), PorterDuff.Mode.MULTIPLY)
+                ), PorterDuff.Mode.SRC_ATOP
+            )
+            val iconColor = PorterDuffColorFilter(
+                ContextCompat.getColor(
+                    this,
+                    if (primary)
+                        R.color.colorTextAccent
+                    else
+                        R.color.colorTextPrimary
+                ), PorterDuff.Mode.MULTIPLY
+            )
 
             backIcon?.let {
                 it.colorFilter = iconColor
@@ -81,6 +86,10 @@ abstract class BaseActivity(
         }
     }
 
+    fun setToolbarSearch(state: Boolean) {
+        toolbar_search.visibility = if (state) View.VISIBLE else View.GONE
+    }
+
     private fun setPageName(
         pageName: String
     ) {
@@ -89,7 +98,7 @@ abstract class BaseActivity(
 
     override fun onDestroy() {
         super.onDestroy()
-        if(isRegisteredReceiver) {
+        if (isRegisteredReceiver) {
             unregisterReceiver(mConnectionReceiver)
             isRegisteredReceiver = false
         }
@@ -97,14 +106,14 @@ abstract class BaseActivity(
 
     override fun onPause() {
         super.onPause()
-        if(isRegisteredReceiver) {
+        if (isRegisteredReceiver) {
             unregisterReceiver(mConnectionReceiver)
             isRegisteredReceiver = false
         }
     }
 
     private fun initData(receiver: ConnectionInterface) {
-        if(mConnectionReceiver == null) {
+        if (mConnectionReceiver == null) {
             mConnectionReceiver = ConnectionReceiver()
             mConnectionReceiver?.let {
                 val mIntentFilter = IntentFilter()
@@ -127,9 +136,9 @@ abstract class BaseActivity(
 
     override fun onProgress(isShow: Boolean) {
         mProgressBar?.let {
-            if(isShow && !it.isShowing) {
+            if (isShow && !it.isShowing) {
                 it.show()
-            }else{
+            } else {
                 it.dismiss()
             }
         }
@@ -176,7 +185,7 @@ abstract class BaseActivity(
         if (item?.itemId == android.R.id.home) {
             finish()
         }
-        return super.onOptionsItemSelected(item)
+        return super.onOptionsItemSelected(item as MenuItem)
     }
 
 }

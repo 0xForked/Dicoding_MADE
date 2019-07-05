@@ -13,22 +13,22 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import id.aasumitro.made.R
 import id.aasumitro.made.data.entity.Movie
 import id.aasumitro.made.data.entity.Show
-import id.aasumitro.made.ui.main.rv.listener.MovieListener
-import id.aasumitro.made.ui.main.rv.listener.ShowListener
-import kotlinx.android.synthetic.main.fragment_favorite.*
-import id.aasumitro.made.ui.main.rv.adapter.MovieAdapter
-import id.aasumitro.made.ui.main.rv.adapter.ShowAdapter
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import id.aasumitro.made.ui.detail.DetailActivity
 import id.aasumitro.made.ui.detail.DetailActivity.Companion.DATA_ENTITY
 import id.aasumitro.made.ui.detail.DetailActivity.Companion.EXTRA_DATA
 import id.aasumitro.made.ui.detail.DetailActivity.Companion.MOVIE
 import id.aasumitro.made.ui.detail.DetailActivity.Companion.SHOW
+import id.aasumitro.made.ui.rv.adapter.MovieAdapter
+import id.aasumitro.made.ui.rv.adapter.ShowAdapter
+import id.aasumitro.made.ui.rv.listener.MovieListener
+import id.aasumitro.made.ui.rv.listener.ShowListener
+import kotlinx.android.synthetic.main.fragment_favorite.*
 
 
 /**

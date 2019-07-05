@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="change_language_settings">Rubah bahasa</string>
     <string name="title_movie">FILM</string>
     <string name="title_show">ACARA TV</string>
     <string name="text_description">Deskripsi</string>
@@ -12,4 +11,22 @@
     <string name="favorite_movie">Film Favorit</string>
     <string name="favorite_show">Acara Favorit</string>
     <string name="my_favorite">Daftar Favorit</string>
+    <string name="text_search">Cari . . .</string>
+    <string name="title_search">cari</string>
+    <string name="title_result">Hasil</string>
+    <string name="select">Pilih</string>
+    <string name="set">Atur</string>
+    <string name="setting">Pengaturan</string>
+    <string name="text_daily_info">Ingatkan untuk kembali membuka aplikasi</string>
+    <string name="reset">Atur Ulang</string>
+    <string name="text_daily_reminder">Pengingat Harian</string>
+    <string name="text_language">Bahasa</string>
+    <string name="text_localization">Ubah ke bahasa anda</string>
+    <string name="text_release_info">Pengingat film yang akan rilis hari ini</string>
+    <string name="text_release_reminder">Pengingat Rilis</string>
+    <string name="type">Tipe</string>
+    <string name="year">Tahun</string>
+    <string name="text_activate">Mengaktifkan</string>
+    <string name="text_deactivate">Menonaktifkan</string>
+    <string name="empty_text">TIDAK ADA DATA</string>
 </resources>

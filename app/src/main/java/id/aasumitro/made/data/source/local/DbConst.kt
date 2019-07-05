@@ -8,6 +8,7 @@ package id.aasumitro.made.data.source.local
 
 object DbConst {
 
+    const val DATABASE_VERSION = 1
     const val DATABASE_NAME = "dmxxi_db"
 
     const val TABLE_MOVIE = "dmxxi_movie"
@@ -23,7 +24,6 @@ object DbConst {
     const val TABLE_MOVIE_COLUMN_ADULT = "dmxxi_movie_adult"
     const val TABLE_MOVIE_COLUMN_OVERVIEW = "dmxxi_movie_overview"
     const val TABLE_MOVIE_COLUMN_RELEASE = "dmxxi_movie_release"
-
 
     const val TABLE_SHOW = "dmxxi_show"
     const val TABLE_SHOW_COLUMN_ID = "dmxxi_show_id"

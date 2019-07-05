@@ -13,7 +13,7 @@ import id.aasumitro.made.ui.detail.DetailActivity.Companion.SHOW
  * https://aasumitro.id
  */
 
-class DetailViewModel: ViewModel() {
+class DetailViewModel : ViewModel() {
 
     private val mRepository: Repository = Repository()
 
@@ -24,7 +24,7 @@ class DetailViewModel: ViewModel() {
         movie: Movie? = null,
         show: Show? = null
     ) {
-        when(type) {
+        when (type) {
             MOVIE -> mRepository.storeFavoriteMovie(movie)
             SHOW -> mRepository.storeFavoriteShow(show)
         }
@@ -34,7 +34,7 @@ class DetailViewModel: ViewModel() {
         type: String,
         id: Int?
     ) {
-        when(type) {
+        when (type) {
             MOVIE -> mRepository.deleteFavoriteMovie(id)
             SHOW -> mRepository.deleteFavoriteShow(id)
         }
@@ -44,7 +44,7 @@ class DetailViewModel: ViewModel() {
         type: String,
         id: Int?
     ) {
-        val favorite = when(type) {
+        val favorite = when (type) {
             MOVIE -> mRepository.getMovieFavoriteState(id)
             SHOW -> mRepository.getShowFavoriteState(id)
             else -> null

@@ -1,13 +1,12 @@
 package id.aasumitro.made.ui.main.show
 
-import android.util.Log
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import id.aasumitro.made.data.Repository
 import id.aasumitro.made.data.entity.Show
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import androidx.lifecycle.MutableLiveData
 
 /**
  * Created by A. A. Sumitro on 24/06/19.
@@ -20,7 +19,7 @@ class ShowViewModel : ViewModel() {
     private val mRepository: Repository = Repository()
     private var mListTvShow: MutableLiveData<ArrayList<Show>>? = null
 
-    fun shows() : LiveData<ArrayList<Show>> {
+    fun shows(): LiveData<ArrayList<Show>> {
         if (mListTvShow == null) {
             mListTvShow = MutableLiveData()
             getShows()
@@ -37,7 +36,6 @@ class ShowViewModel : ViewModel() {
                 ?.subscribe({ onSuccess ->
                     mListTvShow?.value = onSuccess.results as ArrayList<Show>
                 }, { onError ->
-                    Log.d("ERROR", "ERROR BRO")
                     onError.printStackTrace()
                 })
         }

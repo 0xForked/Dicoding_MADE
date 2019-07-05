@@ -55,7 +55,7 @@ data class Show(
 
     @ColumnInfo(name = TABLE_SHOW_COLUMN_BACKDROP)
     @SerializedName("backdrop_path")
-    var backdropPath: String?= null,
+    var backdropPath: String? = null,
 
     @ColumnInfo(name = TABLE_SHOW_COLUMN_ORI_LANG)
     @SerializedName("originalLanguage")

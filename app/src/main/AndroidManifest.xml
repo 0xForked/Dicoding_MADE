@@ -3,8 +3,21 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="id.aasumitro.made">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission
+            android:name="android.permission.INTERNET"/>
+    <uses-permission
+            android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission
+            android:name="android.permission.VIBRATE"/>
+    <uses-permission
+            android:name="android.permission.WAKE_LOCK"/>
+
+    <permission
+            android:name="id.aasumitro.made.READ_DATABASE"
+            android:protectionLevel="normal"/>
+    <permission
+            android:name="id.aasumitro.made.WRITE_DATABASE"
+            android:protectionLevel="normal"/>
 
     <application
             android:name=".DamovieApp"
@@ -15,6 +28,7 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+
         <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -31,6 +45,56 @@
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
+        <activity android:name=".ui.search.SearchActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="id.aasumitro.made.ui.main.MainActivity"/>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.setting.SettingActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="id.aasumitro.made.ui.main.MainActivity"/>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".ui.widget.FavoriteWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/favorite_widget_info"/>
+        </receiver>
+
+        <receiver
+                android:name=".services.DailyReceiver"
+                android:enabled="true"
+                android:exported="false"/>
+
+        <receiver
+                android:name=".services.ReleaseTodayReceiver"
+                android:enabled="true"
+                android:exported="false"/>
+
+        <service
+                android:name="id.aasumitro.made.services.StackWidgetService"
+                android:permission="android.permission.BIND_REMOTEVIEWS"/>
+
+        <provider
+                android:name=".data.source.local.DamovieContentProvider"
+                android:authorities="id.aasumitro.made"
+                android:exported="true"
+                android:readPermission="id.aasumitro.made.READ_DATABASE"
+                android:writePermission="id.aasumitro.made.WRITE_DATABASE"/>
+
     </application>
 
 </manifest>

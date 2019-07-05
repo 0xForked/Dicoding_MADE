@@ -26,12 +26,11 @@ class MovieViewModel : ViewModel() {
         this.mMovieNavigator = navigator
     }
 
-    fun movies() : LiveData<ArrayList<Movie>> {
+    fun movies(): LiveData<ArrayList<Movie>> {
         if (mListMovies == null) {
             mListMovies = MutableLiveData()
             getMovies()
         }
-
         return mListMovies as MutableLiveData
     }
 

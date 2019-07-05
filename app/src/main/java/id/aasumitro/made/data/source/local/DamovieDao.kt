@@ -1,5 +1,6 @@
 package id.aasumitro.made.data.source.local
 
+import android.database.Cursor
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -40,5 +41,11 @@ interface DamovieDao {
 
     @Query("SELECT dmxxi_show_ori_name FROM dmxxi_show WHERE dmxxi_show_id IN(:id)")
     fun readShowFavoriteState(id: Int): String
+
+    @Query("SELECT * FROM dmxxi_movie")
+    fun readFavorite(): List<Movie>
+
+    @Query("SELECT * FROM dmxxi_movie")
+    fun readFavoriteCursor(): Cursor
 
 }

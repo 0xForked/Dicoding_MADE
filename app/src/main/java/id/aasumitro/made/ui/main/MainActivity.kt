@@ -1,16 +1,17 @@
 package id.aasumitro.made.ui.main
 
-import kotlinx.android.synthetic.main.activity_main.*
-import android.view.Menu
 import android.content.Intent
+import android.view.Menu
 import android.view.MenuItem
-import android.provider.Settings.ACTION_LOCALE_SETTINGS
 import id.aasumitro.made.R
 import id.aasumitro.made.base.BaseActivity
 import id.aasumitro.made.ui.main.favorite.FavoriteFragment
+import id.aasumitro.made.ui.search.SearchActivity
+import id.aasumitro.made.ui.setting.SettingActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
-class MainActivity : BaseActivity(R.layout.activity_main)  {
+class MainActivity : BaseActivity(R.layout.activity_main) {
 
     override fun initView() {
         initToolbar(pageName = getString(R.string.app_title), back = false)
@@ -35,10 +36,15 @@ class MainActivity : BaseActivity(R.layout.activity_main)  {
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        if (item?.itemId == R.id.action_change_language) {
-            val mIntent = Intent(ACTION_LOCALE_SETTINGS)
-            startActivity(mIntent)
-            return true
+        when (item?.itemId) {
+            R.id.action_search -> {
+                val mIntent = Intent(this, SearchActivity::class.java)
+                startActivity(mIntent)
+            }
+            R.id.action_setting -> {
+                val mIntent = Intent(this, SettingActivity::class.java)
+                startActivity(mIntent)
+            }
         }
         return super.onOptionsItemSelected(item)
     }

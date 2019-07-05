@@ -6,7 +6,7 @@ package id.aasumitro.made.ui.main.movie
  * https://aasumitro.id
  */
 
-interface MovieNavigator  {
+interface MovieNavigator {
 
     fun onLoadData(status: Boolean)
 

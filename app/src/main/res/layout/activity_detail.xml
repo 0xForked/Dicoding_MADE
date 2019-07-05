@@ -10,14 +10,14 @@
             android:layout_height="wrap_content">
 
         <include
-            android:id="@+id/detail_component_toolbar"
-            layout="@layout/component_toolbar" />
+                android:id="@+id/detail_component_toolbar"
+                layout="@layout/component_toolbar"/>
 
         <ImageView
                 android:id="@+id/poster_backdrop_detail"
                 android:contentDescription="@null"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="200dp"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
                 tools:srcCompat="@drawable/placeholder"
@@ -68,7 +68,7 @@
                 android:orientation="horizontal"/>
 
         <include
-                layout="@layout/component_detail"
+                layout="@layout/content_detail"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"

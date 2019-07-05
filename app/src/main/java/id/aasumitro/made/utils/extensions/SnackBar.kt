@@ -28,21 +28,31 @@ fun showSnackBar(
 ) {
     val mSnackBar = Snackbar.make(layoutParent, message, duration)
 
-    if(message.contains("Unable to resolve")) mSnackBar.behavior = NoSwipe()
+    if (message.contains("Unable to resolve")) mSnackBar.behavior = NoSwipe()
 
     mSnackBar.view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimaryDark))
 
     val textViewAction = mSnackBar.view.findViewById(com.google.android.material.R.id.snackbar_action) as TextView
     val textView = mSnackBar.view.findViewById(com.google.android.material.R.id.snackbar_text) as TextView
 
-    textView.setTypeface(Typeface.createFromAsset(context.assets, Constants.View.Name[0] + Constants.View.Style[0] + Constants.View.Type), Typeface.NORMAL)
+    textView.setTypeface(
+        Typeface.createFromAsset(
+            context.assets,
+            Constants.View.Name[0] + Constants.View.Style[0] + Constants.View.Type
+        ), Typeface.NORMAL
+    )
     textView.setTextColor(ContextCompat.getColor(context, R.color.colorTextLight))
     textView.gravity = Gravity.CENTER
     textView.textSize = 11.5f
     textView.maxLines = 2
 
-    if(actionText != "") {
-        textViewAction.setTypeface(Typeface.createFromAsset(context.assets, Constants.View.Name[0] + Constants.View.Style[1] + Constants.View.Type), Typeface.NORMAL)
+    if (actionText != "") {
+        textViewAction.setTypeface(
+            Typeface.createFromAsset(
+                context.assets,
+                Constants.View.Name[0] + Constants.View.Style[1] + Constants.View.Type
+            ), Typeface.NORMAL
+        )
         textViewAction.setTextColor(ContextCompat.getColor(context, R.color.colorTextPrimary))
         textViewAction.gravity = Gravity.CENTER
         textViewAction.textSize = 11.5f
@@ -51,5 +61,5 @@ fun showSnackBar(
 
     Handler().postDelayed({
         mSnackBar.show()
-    }, (if(actionText != "") 500 else 0).toLong())
+    }, (if (actionText != "") 500 else 0).toLong())
 }

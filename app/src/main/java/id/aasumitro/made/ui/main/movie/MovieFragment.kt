@@ -11,13 +11,13 @@ import androidx.recyclerview.widget.RecyclerView
 import id.aasumitro.made.R
 import id.aasumitro.made.base.BaseFragment
 import id.aasumitro.made.data.entity.Movie
+import id.aasumitro.made.ui.detail.DetailActivity
 import id.aasumitro.made.ui.detail.DetailActivity.Companion.DATA_ENTITY
 import id.aasumitro.made.ui.detail.DetailActivity.Companion.EXTRA_DATA
 import id.aasumitro.made.ui.detail.DetailActivity.Companion.MOVIE
+import id.aasumitro.made.ui.rv.adapter.MovieAdapter
+import id.aasumitro.made.ui.rv.listener.MovieListener
 import kotlinx.android.synthetic.main.fragment_movie.*
-import id.aasumitro.made.ui.detail.DetailActivity
-import id.aasumitro.made.ui.main.rv.listener.MovieListener
-import id.aasumitro.made.ui.main.rv.adapter.MovieAdapter
 
 /**
  * Created by A. A. Sumitro on 19/06/19.
@@ -44,7 +44,7 @@ class MovieFragment : BaseFragment(R.layout.fragment_movie), MovieListener, Movi
 
     private fun initList() {
         movie_recycler_view.setHasFixedSize(true)
-        val mLayoutManager : RecyclerView.LayoutManager =
+        val mLayoutManager: RecyclerView.LayoutManager =
             GridLayoutManager(activity, 2)
         movie_recycler_view.layoutManager = mLayoutManager
         movie_recycler_view.itemAnimator = DefaultItemAnimator()

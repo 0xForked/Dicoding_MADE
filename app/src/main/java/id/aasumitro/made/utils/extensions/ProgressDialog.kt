@@ -18,7 +18,7 @@ fun initProgressDialog(context: Context): KProgressHUD {
         .setCancellable(false)
         .setDimAmount(0.2f)
         .setCornerRadius(4f)
-        .setSize(45,45)
+        .setSize(45, 45)
         .setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimaryDark))
         .setAnimationSpeed(2)
 }

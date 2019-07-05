@@ -1,10 +1,9 @@
 <resources>
-    <string name="app_name" translatable="false">MADE_APP Submission</string>
+    <string name="app_name" translatable="false">DA\'MOVIE</string>
 
     <string name="title_movie">MOVIE</string>
     <string name="title_show">TV SHOW</string>
 
-    <string name="change_language_settings">Change language</string>
     <string name="app_title" translatable="false">DA\'MOVIE XXI</string>
     <string name="text_description">Description</string>
     <string name="text_first_air">First air</string>
@@ -15,4 +14,24 @@
     <string name="my_favorite">My Favorite</string>
     <string name="favorite_movie">Favorite Movie</string>
     <string name="favorite_show">Favorite Show</string>
+    <string name="title_search">search</string>
+    <string name="text_search">Search . . .</string>
+    <string name="title_result">Result</string>
+    <string name="type">Type</string>
+    <string name="year">Year</string>
+    <string name="setting">Settings</string>
+    <string name="text_language">Language</string>
+    <string name="text_localization">Change to your language</string>
+    <string name="text_release_reminder">Release Reminder</string>
+    <string name="text_release_info">Reminder showing the movie that releases today</string>
+    <string name="text_daily_reminder">Daily Reminder</string>
+    <string name="text_daily_info">Reminder for return to app</string>
+    <string name="set">SET</string>
+    <string name="reset">RESET</string>
+    <string name="select">Select</string>
+    <string name="text_activate">Activate</string>
+    <string name="text_deactivate">Deactivate</string>
+    <string name="appwidget_text" translatable="false">DA\'MOVIE WIDGET</string>
+    <string name="empty_text">NO DATA</string>
+
 </resources>

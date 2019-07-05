@@ -10,14 +10,14 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import id.aasumitro.made.R
 import id.aasumitro.made.base.BaseFragment
-import kotlinx.android.synthetic.main.fragment_show.*
 import id.aasumitro.made.data.entity.Show
 import id.aasumitro.made.ui.detail.DetailActivity
 import id.aasumitro.made.ui.detail.DetailActivity.Companion.DATA_ENTITY
 import id.aasumitro.made.ui.detail.DetailActivity.Companion.EXTRA_DATA
 import id.aasumitro.made.ui.detail.DetailActivity.Companion.SHOW
-import id.aasumitro.made.ui.main.rv.listener.ShowListener
-import id.aasumitro.made.ui.main.rv.adapter.ShowAdapter
+import id.aasumitro.made.ui.rv.adapter.ShowAdapter
+import id.aasumitro.made.ui.rv.listener.ShowListener
+import kotlinx.android.synthetic.main.fragment_show.*
 
 /**
  * Created by A. A. Sumitro on 19/06/19.
@@ -33,7 +33,7 @@ class ShowFragment : BaseFragment(R.layout.fragment_show), ShowListener {
             .get(ShowViewModel::class.java)
     }
 
-    override fun initView() { }
+    override fun initView() {}
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -42,7 +42,7 @@ class ShowFragment : BaseFragment(R.layout.fragment_show), ShowListener {
 
     private fun initList() {
         show_recycler_view.setHasFixedSize(true)
-        val mLayoutManager : RecyclerView.LayoutManager =
+        val mLayoutManager: RecyclerView.LayoutManager =
             GridLayoutManager(activity, 2)
         show_recycler_view.layoutManager = mLayoutManager
         show_recycler_view.itemAnimator = DefaultItemAnimator()

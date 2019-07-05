@@ -24,16 +24,21 @@ import id.aasumitro.made.data.source.local.DbConst.DATABASE_NAME
 )
 abstract class DamovieDb : RoomDatabase() {
     abstract fun damovieDao(): DamovieDao
+
     companion object {
-        @Volatile private var INSTANCE: DamovieDb? = null
+        @Volatile
+        private var INSTANCE: DamovieDb? = null
+
         fun getInstance(context: Context): DamovieDb =
             INSTANCE ?: synchronized(this) {
                 INSTANCE ?: buildDatabase(context).also { INSTANCE = it }
             }
+
         private fun buildDatabase(context: Context) =
             Room.databaseBuilder(
                 context.applicationContext,
-                DamovieDb::class.java, DATABASE_NAME
+                DamovieDb::class.java,
+                DATABASE_NAME
             ).allowMainThreadQueries().build()
     }
 }

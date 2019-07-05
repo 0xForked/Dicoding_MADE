@@ -27,16 +27,17 @@ class ConnectionReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, arg1: Intent) {
         val connMgr =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        Log.e(TAG,"Internet Check")
+        Log.e(TAG, "Internet Check")
         val builder = NetworkRequest.Builder()
         connMgr.registerNetworkCallback(builder.build(),
             object : ConnectivityManager.NetworkCallback() {
                 override fun onAvailable(network: Network?) {
-                    super.onAvailable(network)
+                    super.onAvailable(network as Network)
                     showMessage("Internet Connected")
                 }
+
                 override fun onLost(network: Network?) {
-                    super.onLost(network)
+                    super.onLost(network as Network)
                     showMessage("No Internet Connection")
                 }
             }
@@ -48,7 +49,7 @@ class ConnectionReceiver : BroadcastReceiver() {
             it.onConnectionChange(message)
             Log.e(TAG, message)
         } ?: run {
-            Log.e(TAG,"No Callback for Internet State")
+            Log.e(TAG, "No Callback for Internet State")
         }
     }
 
